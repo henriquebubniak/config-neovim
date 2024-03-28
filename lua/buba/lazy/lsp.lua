@@ -31,15 +31,19 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "clangd",
+                "pyright",
             },
             handlers = {
-                function(server_name) -- default handler (optional)
-
-                    require("lspconfig")[server_name].setup {
+                ["clangd"] = function()
+                    require("lspconfig").clangd.setup {
                         capabilities = capabilities
                     }
                 end,
-
+                ["pyright"] = function()
+                    require("lspconfig").pyright.setup {
+                        capabilities = capabilities
+                    }
+                end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
