@@ -8,3 +8,4 @@ vim.opt.expandtab = true
 vim.opt.scrolloff = 999
 vim.keymap.set("n", "<leader>xx", function() require("trouble").toggle() end)
 vim.keymap.set("n", "<leader>fr", ":RustFmt<CR>")
+vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>")
