@@ -23,7 +23,6 @@ return {
             {},
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
-
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -32,10 +31,16 @@ return {
                 "rust_analyzer",
                 "clangd",
                 "pyright",
+                "gopls",
             },
             handlers = {
                 ["clangd"] = function()
                     require("lspconfig").clangd.setup {
+                        capabilities = capabilities
+                    }
+                end,
+                ["gopls"] = function()
+                    require("lspconfig").gopls.setup {
                         capabilities = capabilities
                     }
                 end,
