@@ -3,8 +3,4 @@ require "buba.options"
 require "buba.keymaps"
 require "buba.lsp"
 require "buba.cmp"
-require "buba.comments"
-require "buba.git_signs"
-require "buba.nvim_tree"
-require "buba.bufferline"
 
