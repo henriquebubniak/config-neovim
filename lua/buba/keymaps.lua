@@ -9,6 +9,8 @@ vim.g.mapleader = " "
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<S-l>", ":bnext<cr>", opts)
 keymap("n", "<S-h>", ":bprevious<cr>", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
