@@ -1,6 +1,7 @@
 local servers = {
     "lua_ls",
     "rust_analyzer",
+    "pyright",
 }
 
 local settings = {
@@ -29,5 +30,7 @@ for _, server in pairs(servers) do
 
 	server = vim.split(server, "@")[1]
 
-	lspconfig[server].setup(opts)
+	if server ~= "rust_analyzer" then
+        lspconfig[server].setup(opts)
+    end
 end
