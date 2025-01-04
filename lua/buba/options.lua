@@ -7,6 +7,6 @@ vim.opt.tabstop = 4
 vim.opt.number = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 999
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme vscode")
 vim.cmd [[set iskeyword +=-]]
 

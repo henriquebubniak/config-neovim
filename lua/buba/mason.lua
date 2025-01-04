@@ -3,6 +3,7 @@ local servers = {
     "rust_analyzer",
     "pyright",
     "clangd",
+    "ocamllsp",
 }
 
 local settings = {
