@@ -120,16 +120,21 @@ vim.opt.relativenumber = true
 vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>f", ":FzfLua files resume=true<CR>", { desc = "Search files" })
 vim.keymap.set("n", "<Leader>s", ":FzfLua live_grep resume=true<CR>", { desc = "Grep files" })
-vim.keymap.set("n", "<S-h>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Go to previous buffer" })
-vim.keymap.set("n", "<S-l>", "<cmd>BufferLineCycleNext<CR>", { desc = "Go to next buffer" })
+vim.keymap.set("n", "<S-h>", ":bp<CR>", { desc = "Go to previous buffer" })
+vim.keymap.set("n", "<S-l>", ":bn<CR>", { desc = "Go to next buffer" })
 
 vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true, desc = 'Move to left window' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true, desc = 'Move to down window' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true, desc = 'Move to up window' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true, desc = 'Move to right window' })
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true, desc = "Toggle NvimTree" })
+vim.keymap.set('n', '\\', ':NvimTreeFindFile<CR>', { desc = 'Find current file in NvimTree' })
 vim.keymap.set('n', '<leader>gp', ':lua require("gitsigns").preview_hunk()<CR>')
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true, desc = "Go to Definition" })
+vim.keymap.set("n", "<leader>th", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}), {0})
+end, { desc = "Toggle Inlay Hints" })
+vim.keymap.set('n', '<leader>bc', ':BufferLinePickClose<CR>', { desc = 'Close buffer with pick' })
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
