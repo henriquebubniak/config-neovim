@@ -138,6 +138,7 @@ vim.keymap.set('n', '<leader>bc', ':BufferLinePickClose<CR>', { desc = 'Close bu
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
+vim.opt.scrolloff = 999
 
 vim.lsp.config('lua_ls', {
 	settings = {
