@@ -120,9 +120,9 @@ vim.opt.relativenumber = true
 vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>f", ":FzfLua files resume=true<CR>", { desc = "Search files" })
 vim.keymap.set("n", "<Leader>s", ":FzfLua live_grep resume=true<CR>", { desc = "Grep files" })
+vim.keymap.set("n", "<Leader>b", ":FzfLua buffers resume=true<CR>", { desc = "Search buffers" })
 vim.keymap.set("n", "<S-h>", ":bp<CR>", { desc = "Go to previous buffer" })
 vim.keymap.set("n", "<S-l>", ":bn<CR>", { desc = "Go to next buffer" })
-
 vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true, desc = 'Move to left window' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true, desc = 'Move to down window' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true, desc = 'Move to up window' })
