@@ -1,6 +1,9 @@
 vim.opt.pumheight = 5
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
+vim.opt.scrolloff = 999
 vim.opt.termguicolors = true
-vim.cmd("colorscheme kanagawa")
 vim.opt.relativenumber = true
 vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>f", ":FzfLua files resume=true<CR>", { desc = "Search files" })
@@ -21,12 +24,4 @@ vim.keymap.set("n", "<leader>th", function()
 end, { desc = "Toggle Inlay Hints" })
 vim.keymap.set('n', '<leader>bc', ':BufferLinePickClose<CR>', { desc = 'Close buffer with pick' })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.expandtab = true
-vim.opt.scrolloff = 999
--- transparent background
-vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
-vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
+vim.cmd("colorscheme kanagawa")
