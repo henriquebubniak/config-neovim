@@ -1,4 +1,6 @@
+vim.cmd("colorscheme kanagawa")
 vim.opt.pumheight = 5
+vim.opt.swapfile = false
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
@@ -20,8 +22,10 @@ vim.keymap.set('n', '\\', ':NvimTreeFindFile<CR>', { desc = 'Find current file i
 vim.keymap.set('n', '<leader>gp', ':lua require("gitsigns").preview_hunk()<CR>')
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true, desc = "Go to Definition" })
 vim.keymap.set("n", "<leader>th", function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({0}), {0})
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
 end, { desc = "Toggle Inlay Hints" })
 vim.keymap.set('n', '<leader>bc', ':BufferLinePickClose<CR>', { desc = 'Close buffer with pick' })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-vim.cmd("colorscheme kanagawa")
+vim.keymap.set({ "n", "v", "x" }, "<leader>w", "<CMD>wa<CR>", { desc = "Write files" })
+vim.keymap.set({ "n", "v", "x" }, "<leader>q", "<CMD>q<CR>", { desc = "Quit" })
+vim.keymap.set({ "n", "v", "x" }, "<leader>lf", vim.lsp.buf.format, { desc = "Format file" })
