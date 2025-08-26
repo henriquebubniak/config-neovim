@@ -11,8 +11,6 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<Leader>f", ":FzfLua files resume=true<CR>", { desc = "Search files" })
 vim.keymap.set("n", "<Leader>s", ":FzfLua live_grep resume=true<CR>", { desc = "Grep files" })
 vim.keymap.set("n", "<Leader>b", ":FzfLua buffers resume=true<CR>", { desc = "Search buffers" })
-vim.keymap.set("n", "<S-h>", ":bp<CR>", { desc = "Go to previous buffer" })
-vim.keymap.set("n", "<S-l>", ":bn<CR>", { desc = "Go to next buffer" })
 vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true, desc = 'Move to left window' })
 vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true, desc = 'Move to down window' })
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true, desc = 'Move to up window' })
@@ -29,3 +27,16 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set({ "n", "v", "x" }, "<leader>w", "<CMD>wa<CR>", { desc = "Write files" })
 vim.keymap.set({ "n", "v", "x" }, "<leader>q", "<CMD>q<CR>", { desc = "Quit" })
 vim.keymap.set({ "n", "v", "x" }, "<leader>lf", vim.lsp.buf.format, { desc = "Format file" })
+
+local harpoon = require('harpoon')
+vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+vim.keymap.set("n", "<leader>h", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+vim.keymap.set("n", "<leader>1", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end)
+vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+vim.keymap.set("n", "<S-h>", function() harpoon:list():prev() end)
+vim.keymap.set("n", "<S-l>", function() harpoon:list():next() end)
