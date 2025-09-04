@@ -27,6 +27,7 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set({ "n", "v", "x" }, "<leader>w", "<CMD>wa<CR>", { desc = "Write files" })
 vim.keymap.set({ "n", "v", "x" }, "<leader>q", "<CMD>q<CR>", { desc = "Quit" })
 vim.keymap.set({ "n", "v", "x" }, "<leader>lf", vim.lsp.buf.format, { desc = "Format file" })
+vim.keymap.set('i', 'jj', '<Esc>', { noremap = true, silent = true })
 
 local harpoon = require('harpoon')
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
