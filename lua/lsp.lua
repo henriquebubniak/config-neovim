@@ -5,6 +5,7 @@ require('mason-tool-installer').setup({
 		"clangd",
 	}
 })
+vim.lsp.enable('ty')
 
 vim.lsp.config('lua_ls', {
 	settings = {
